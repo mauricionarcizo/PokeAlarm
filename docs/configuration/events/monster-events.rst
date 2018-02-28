@@ -10,8 +10,8 @@ Prerequisites
 
 This pages assumes the following:
 
-1. You understand what :doc:`index` are.
-2. You understand how :ref:`events_dts` function.
+1. You have a working scanner.
+2. You read and understood the :ref:`events_dts` page.
 3. You are using the latest version of PokeAlarm.
 
 
@@ -27,9 +27,9 @@ Available DTS
 General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-=================== ============================================================
+=================== ==========================================================
 DTS                 Description
-=================== ============================================================
+=================== ==========================================================
 mon_name            The name of the monster's species.
 mon_id              ID of the monster's species.
 mon_id_3            ID of the monster's species, padded to 3 digits.
@@ -37,33 +37,35 @@ form                Form name of the monster.
 form_or_empty       Form name of the monster, or empty string if unknown.
 form_id             Form ID for the monster.
 form_id_3           Form ID of the monster, padded to 3 digits.
-costume             Costume name of the monster.
-costume_or_empty    Costume name of the monster, or empty string if unknown.
-costume_id          Costume ID for the monster.
-costume_id_3        Costume ID of the monster, padded to 3 digits.
 type1               Name of the monster's primary type.
-type1_or_empty      Name of the monster's primary type, or empty string if unknown.
-type1_emoji         Emoji for the monster's primary type, or empty string if unknown.
+type1_or_empty      Name of the monster's primary type, or empty string
+                    if unknown.
+type1_emoji         Emoji for the monster's primary type, or empty string
+                    if unknown.
 type2               Name of the monster's secondary type.
-type2_or_empty      Name of the monster's secondary type, or empty string if unknown.
-type2_emoji         Emoji for the monster's secondary type, or empty string if unknown.
+type2_or_empty      Name of the monster's secondary type, or empty string
+                    if unknown.
+type2_emoji         Emoji for the monster's secondary type, or empty string
+                    if unknown.
 types               Monster's type formatted as "type1/type2".
-types_emoji         Type emojis for the monster as "type1+type2", or empty string if unknown.
-=================== ============================================================
+types_emoji         Type emojis for the monster as "type1+type2", or empty
+                    string if unknown.
+=================== ==========================================================
 
 
-Encounter Information
+Stats
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    Encounter information may require special settings or accounts for your
-    scanner to work correctly. Please consult the documentation for your
-    scanner.
+    The DTS in this section require your scanner to encounter the target
+    monsters to get the proper information. This typically requires special
+    settings and accounts - see the documentation for your scanner for
+    specifics.
 
-=================== ============================================================
+=================== =========================================================
 DTS                 Description
-=================== ============================================================
+=================== =========================================================
 mon_lvl             Level of the monster.
 cp                  Combat Points of the monster.
 iv                  Individual Values percentage of the monster.
@@ -72,6 +74,25 @@ iv_2                IVs, rounded to 2 decimal places.
 atk                 Attack IV of the monster.
 def                 Defense IV of the monster.
 sta                 Stamina IV of the monster.
+base_catch          Base catch rate of the monster.
+great_catch         Catch rate of the monster when using a super ball.
+ultra_catch         Catch rate of the monster when using a ultra ball.
+=================== =========================================================
+
+
+Moves
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    The DTS in this section require your scanner to encounter the target
+    monsters to get the proper information. This typically requires special
+    settings and accounts - see the documentation for your scanner for
+    specifics.
+
+=================== =========================================================
+DTS                 Description
+=================== =========================================================
 quick_move          Name of the monster's quick move.
 quick_id            ID of the monster's quick move.
 quick_type_id       ID of the monster's quick move type.
@@ -90,6 +111,28 @@ charge_damage       Damage of the monster's charge move.
 charge_dps          DPS of the monster's charge move.
 charge_duration     Duration of the monster's charge move.
 charge_energy       Energy cost by the quick move.
+atk_grade           Offensive grade of the monster's moveset.
+def_grade           Defensive grade of the monster's moveset.
+=================== =========================================================
+
+
+Cosmetic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    The DTS in this section require your scanner to encounter the target
+    monsters to get the proper information. This typically requires special
+    settings and accounts - see the documentation for your scanner for
+    specifics.
+
+=================== ============================================================
+DTS                 Description
+=================== ============================================================
+costume             Costume of the monster.
+costume_or_empty    Costume of the monster, or an empty string if unknown.
+costume_id          Costume ID of the monster.
+costume_id_3        Costume ID of the monster, formatted to there digits.
 gender              Gender of the monster, represented as a single character.
 height              Height of the monster.
 weight              Weight of the monster.
@@ -104,8 +147,9 @@ Location
 
 .. warning::
 
-    Geofences are only evaluated per Filter - ``<geofence>`` will be unknown if
-    it passes through a Filter without a ``geofences`` restriction applied.
+    Geofences are evaluated on a per Filter basis - ``<geofence>`` will
+    always be unknown if it passes through a Filter without a ``geofences``
+    restriction applied.
 
 =================== ============================================================
 DTS                 Description
@@ -148,12 +192,12 @@ weather_emoji            Weather emoji of the monster, or empty string if
                          unknown.
 boosted_weather_id       Return weather ID if monster is boosted.
 boosted_weather          Return weather name if monster is boosted.
-boosted_weather_or_empty Return weather name if monster is boosted, or empty
-                         string if unknown.
-boosted_weather_emoji    Return weather emoji if monster is boosted, or empty
-                         string if unknown.
-boosted_or_empty         Return `boosted` if monster is boosted, or empty string if
-                         not.
+boosted_weather_or_empty Return weather name if monster is boosted, or
+                         empty string if unknown.
+boosted_weather_emoji    Return weather emoji if monster is boosted, or
+                         empty string if unknown.
+boosted_or_empty         Return `boosted` if monster is boosted, or empty
+                         string if not.
 ======================== =======================================================
 
 

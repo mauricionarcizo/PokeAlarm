@@ -38,7 +38,6 @@ default behavior. The `default rule` for the above scenario could be
     "filters":["100-iv","90-iv","in_geofence","rare-mon"],
     "alarms":["discord-rare","discord-perfect","telegram-all"]
 }
-
 ```
 
 Each rule has a name, and 2 required sections: `"filters"` and
