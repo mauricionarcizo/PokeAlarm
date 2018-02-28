@@ -51,7 +51,7 @@ Creating an Alarm
 
 Each Alarm is containing several key-value a *named* JSON Object containing
 several key-value pairs called *alarm parameters*. Some parameters are
-_required_ for each alarm, and some are _optional_ parameters. In the case of
+**required** for each alarm, and some are **optional** parameters. In the case of
 optional parameters, default values are generally provided when they aren't
 specified. For example, a basic Discord alarm looks like this:
 
@@ -83,19 +83,20 @@ that uses alarm using alert level parameters:
     	"type":"discord",
     	"webhook_url":"DEFAULT_CHANNEL_URL",
     	"monsters":{
-    		"webhook_url":"MONSTER_CHANNEL_URL"
-      },
+    	  "webhook_url":"MONSTER_CHANNEL_URL"
+    	},
     	"raids":{
-    		"webhook_url":"RAIDS_CHANNEL_URL"
-      }
+    	  "webhook_url":"RAIDS_CHANNEL_URL"
+    	}
     }
+
 
 In the above example, any *alert level* parameters not set will default to the
 *alarm level* parameters - this means "stops", "gyms", and "eggs" will all be
 diverted to the channel at ``"DEFAULT_CHANNEL_URL"``.
 
 Additionally, are also several *alert level* parameters that can't be set at the
-alarm level. For example, "body" can _only_ be set at the alert level in
+alarm level. For example, "body" can **only** be set at the alert level in
 Discord:
 
 .. code-block:: json
@@ -105,14 +106,15 @@ Discord:
     	"type":"discord",
     	"webhook_url":"DEFAULT_CHANNEL_URL",
     	"monsters":{
-    		"webhook_url":"MONSTER_CHANNEL_URL",
-    		"body":"This is a monster event!"
+    	  "webhook_url":"MONSTER_CHANNEL_URL",
+    	  "body":"This is a monster event!"
     	},
     	"raids":{
-    		"webhook_url":"RAIDS_CHANNEL_URL",
-    		"body":"This is a raid event!"
+    	  "webhook_url":"RAIDS_CHANNEL_URL",
+    	  "body":"This is a raid event!"
     	}
     }
+
 
 Finally, you can use :ref:`DTS <events_dts>` to customize most parameters based
 on the event. This can be used for a variety of reasons: specializing the
