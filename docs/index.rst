@@ -16,7 +16,7 @@ know of any rare spawns or raids.
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :caption: Getting Started
+   :caption: Initial Setup
    :glob:
 
    getting-started/installation
@@ -25,7 +25,7 @@ know of any rare spawns or raids.
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :caption: Configuration
+   :caption: Basic Configuration
    :glob:
 
    configuration/server-settings
@@ -35,7 +35,7 @@ know of any rare spawns or raids.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Advanced:
+   :caption: Advanced Configuration
 
    configuration/server-settings
 
@@ -61,13 +61,13 @@ know of any rare spawns or raids.
    :caption: Other
    :glob:
 
-   Webhook Standards <miscellaneous/webhook-standard>
-   Webhook Tester <miscellaneous/webhook-tester>
-   Patch Notes <miscellaneous/patch-notes>
-   Caching <miscellaneous/object-caching>
-   Docker <miscellaneous/docker>
-   Location Services <miscellaneous/location-services>
-   Contributing <miscellaneous/contributing>
+   miscellaneous/webhook-standard
+   miscellaneous/webhook-tester
+   miscellaneous/patch-notes
+   miscellaneous/object-caching
+   miscellaneous/docker
+   miscellaneous/location-services
+   miscellaneous/contributing
 
 
 Indices and tables
