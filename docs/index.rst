@@ -29,9 +29,20 @@ know of any rare spawns or raids.
    :glob:
 
    configuration/server-settings
+   configuration/events/index
+   configuration/filters/index
+   configuration/alarms/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced:
+
+   configuration/server-settings
+
    configuration/managers
-   configuration/rules-overview
    configuration/geofences
+   configuration/rules-overview
+
 
 .. toctree::
    :titlesonly:
