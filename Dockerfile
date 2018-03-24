@@ -17,6 +17,8 @@ WORKDIR /usr/src/app
 # Set Entrypoint with hard-coded options
 ENTRYPOINT ["python", "./start_pokealarm.py", "--host", "0.0.0.0"]
 
+CMD ["--heroku", "8"]
+
 # Install required system packages
 RUN apk add --no-cache ca-certificates
 RUN apk add --no-cache bash git openssh

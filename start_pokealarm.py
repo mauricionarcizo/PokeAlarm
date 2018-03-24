@@ -212,6 +212,9 @@ def parse_settings(root_path):
         '-ma', '--max_attempts', type=int, default=[3], action='append',
         help='Maximum attempts an alarm makes to send a notification.')
 
+    parser.add_argument(
+        '--heroku', type=int, action='append')
+
     args = parser.parse_args()
 
     if args.debug:
@@ -222,7 +225,12 @@ def parse_settings(root_path):
         log.debug("Debug mode enabled!")
 
     config['HOST'] = args.host
-    config['PORT'] = args.port
+    port = None
+    if args.heroku:
+        port = int(os.environ.get("PORT", 9999))
+    else:
+        port = args.port
+    config['PORT'] = port
     config['CONCURRENCY'] = args.concurrency
     config['DEBUG'] = args.debug
 
